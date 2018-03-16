@@ -26,7 +26,7 @@ public class CountDownLatchT {
                 try {
                     int time = new Random().nextInt(5);
                     TimeUnit.SECONDS.sleep(time);
-                    System.out.printf("Thread %s ## 耗时:%d\n", Thread.currentThread().getId(), time);
+                    System.out.printf("Thread %s ## 耗时:%s\n", Thread.currentThread().getId(), time);
                     // 线程结束后,计数器减一
                     count.countDown();
                 } catch (InterruptedException e) {

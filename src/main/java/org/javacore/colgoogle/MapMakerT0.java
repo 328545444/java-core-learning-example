@@ -3,6 +3,7 @@ package org.javacore.colgoogle;
 import com.google.common.base.Function;
 import com.google.common.collect.MapMaker;
 
+import java.util.Hashtable;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +22,7 @@ public class MapMakerT0 {
                          * 可以将这里的返回值放到对应的key的value中
                          */
                         new Function<String, String>() {
+                            @Override
                             public String apply(String s) {
                                 return "creating " + s + " -> Object";
                             }
@@ -29,7 +31,7 @@ public class MapMakerT0 {
 
         map.put("a","testa");
         map.put("b","testb");
-
+        Hashtable ht=new Hashtable();
         System.out.println(map.get("a"));
         System.out.println(map.get("b"));
         System.out.println(map.get("c"));

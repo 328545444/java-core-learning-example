@@ -30,7 +30,7 @@ public class RpcExporter {
                 executor.execute(new ExporterTask(serverSocket.accept()));
             }
         } finally {
-          serverSocket.close();  
+          serverSocket.close();
         }
     }
 
@@ -69,7 +69,9 @@ public class RpcExporter {
                 Method method = service.getMethod(methodName,paramTypes);
                 // 获取服务方法返回对象
                 Object result = method.invoke(service.newInstance(),arguments);
-
+                System.out.println("methodName: "+methodName);
+                System.out.println("interfaceName: "+interfaceName);
+                System.out.println("service: "+service);
                 // 对象输出流
                 output = new ObjectOutputStream(client.getOutputStream());
                 output.writeObject(result);

@@ -6,4 +6,5 @@ package org.jee.rpc;
  */
 public interface EchoService {
     String echo(String ping);
+    String say();
 }

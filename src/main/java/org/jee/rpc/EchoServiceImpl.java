@@ -7,6 +7,11 @@ package org.jee.rpc;
 public class EchoServiceImpl implements EchoService {
     @Override
     public String echo(String ping) {
+        System.out.println("ping: "+ping);
         return ping != null ? ping + " --> I am ok." : "I am ok.";
+    }
+    @Override
+    public String say(){
+        return"say:";
     }
 }
